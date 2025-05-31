@@ -50,12 +50,10 @@ Automatically connects to the right RPC endpoint in this priority order:
    ```bash
    npm install
    ```
-
-3.  **Building the Extension**
-```bash
-npm run compile
-```
-
+3. **Building the Extension**
+   ```bash
+   npm run compile
+   ```
 
 4. **Launch Extension**
    Press `F5` in VS Code to launch the **Extension Development Host**
