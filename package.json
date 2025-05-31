@@ -1,0 +1,69 @@
+{
+  "name": "solana-vscode-extension",
+  "displayName": "Solana Dev Tools",
+  "description": "Inspect Solana accounts and transactions directly in VS Code",
+  "version": "0.0.1",
+  "publisher": "",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "solana",
+    "blockchain",
+    "anchor",
+    "web3"
+  ],
+  "activationEvents": [
+    "onLanguage:typescript",
+    "onLanguage:javascript",
+    "onLanguage:rust",
+    "onLanguage:json",
+    "onLanguage:log",
+    "onTerminal:*"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "Solana",
+      "properties": {
+        "solana.network": {
+          "type": "string",
+          "default": "",
+          "description": "Custom Solana RPC URL (e.g., https://api.mainnet-beta.solana.com). Leave empty to auto-detect from Anchor.toml or Solana CLI config."
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "solana.peekAccount",
+        "title": "Solana: Peek Account"
+      },
+      {
+        "command": "solana.peekTransaction",
+        "title": "Solana: Peek Transaction"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish"
+  },
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.30.1",
+    "@solana/web3.js": "^1.95.3",
+    "js-sha256": "^0.11.1",
+    "toml": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.29",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "3.4.2",
+    "typescript": "^5.5.3"
+  }
+}
